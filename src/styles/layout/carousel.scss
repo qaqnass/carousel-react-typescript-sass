@@ -1,0 +1,104 @@
+@import '../mixing/index.scss';
+
+.carousel {
+  // padding: 0 16px;
+  position: relative;
+}
+
+.carousel-container {
+  align-items: center;
+  box-sizing: border-box;
+  display: flex;
+  max-width: 94%;
+  margin-left: 3%;
+  overflow-y: auto;
+  scrollbar-width: none;
+
+  ul {
+    display: flex;
+    gap: 16px;
+  }
+
+  li {
+    @include box-shado-1;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    padding: 6px 2px;
+    text-align: center;
+    box-sizing: border-box;
+  }
+
+  li:first-child {
+    margin-left: 6px;
+  }
+
+  li:last-child {
+    margin-right: 6px;
+  }
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel-icon {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  user-select: none;
+  z-index: 100;
+}
+
+.carousel-icon.next {
+  right: 0px;
+}
+
+.carousel-icon.prev {
+  left: 0px;
+}
+
+.carousel-block-container {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 24px;
+  justify-content: center;
+  overflow: hidden;
+  margin-bottom: 16px;
+  text-align: center;
+  width: 100%;
+}
+
+.carousel-block-xs1 {
+  width: 100%;
+}
+
+.carousel-block-xs2 {
+  width: 49%;
+}
+.carousel-block-xs3 {
+  width: 33%;
+}
+
+.carousel-block-xs4 {
+  width: 24%;
+}
+
+.carousel-block-image-container {
+  width: 100%;
+
+  img {
+    border-radius: 5px;
+    height: 200px;
+    object-fit: cover;
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .carousel-block-image-container {  
+    img {
+      height: 320px;
+      width: 320px;
+    }
+  }
+}
